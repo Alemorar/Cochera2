@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Registrar Entrada</title>
+    </h:head>
+    <h:body>
+        <p:panel id="pnlRegistrarEntrada" header="Registrar Entrada de Vehiculo"/>
+            <h:form id="frmRegistrarEntradaDeVehiculo"/>
+                <p:growl id="mensajes" sticky="true" showDetail="true"/>
+                <h:panelGrid id="grdRegistrarEntradaDeVehiculo" columns="2"
+                         cellpadding="3"/>
+                    <p:outputLabel id="lblPatente" for="txtPatente"
+                               value="Patente"/>
+                    <p:inputText id="txtPatente" required="true"
+                             maxlength="7" size="9"/>
+                    <p:outputLabel id="lblTipoVehiculo" for="cmbTipoVehiculos"
+                                   value="Tipo de Vehiculo:"/>
+                    <p:selectOneMenu id="cmbTipoVehiculos" required="true"
+                                     style="whidth: 125px"
+                                    <f:selectItem itemLabel="Seleccione un Tipo de Vehiculo"
+                                                   noSelectionOption="true"/>
+                                    <f:selectItem itemLabel="Automovil" itemValue="Automovil"/>
+                                    <f:selectItem itemLabel="Camioneta" itemValue="Camioneta"/>
+                                    <f:selectItem itemLabel="Moto" itemValue="Moto"
+                    </p:selectOneMenu>
+                    
+    </h:body>
+</html>
+
