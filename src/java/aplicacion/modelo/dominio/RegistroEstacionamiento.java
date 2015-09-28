@@ -1,7 +1,6 @@
 package aplicacion.modelo.dominio;
 
 
-import aplicacion.modelo.dominio.GuiaPrecio;
 import java.time.LocalTime;
 import java.util.Date;
 
