@@ -4,81 +4,39 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+
     <h:head>
         <title>Registrar Entrada de Vehiculo</title>
     </h:head>
     <h:body>
-        <p:panel id="pnlRegistrarEntrada" header="Registrar Entrada de Vehiculo">/*
-            Panel es un componente de la agrupación con un encabezado, contenido y pie de página.
-            id es un identificador unico que tiene la etiqueta*/
-        <h:form id="frmRegistrarEntradaDeVehiculo">/*El tag h:form renderiza un elemento de formulario HTML.
-            JSF utilizan la técnica de "post-back" para enviar los datos del formulario de nuevo
-            a la página que contiene el formulario.*/
-        <p:growl id="mensajes" sticky="true" showDetail="true"/>/*Tag primefaces p:growl muestra mensajes en una capa superpuesta o pop up.*/
+        <p:panel id="pnlRegistrarEntrada" header="Registrar Entrada de Vehiculo">
+        <h:form id="frmRegistrarEntradaDeVehiculo">
+            <p:growl id="mensajes" sticky="true" showDetail="true"/>
         <h:panelGrid id="grdRegistrarEntradaDeVehiculo" columns="2"
-                     cellpadding="3">/*El JSF Tag h:panelGrid hace que un elemento de la tabla sea compatible HTML4.
-            Puede ser utilizado como un controlador de distribución para una interfaz de usuario basada en la red.
-            Simplifica la tarea de construir una tabla de diseño para mantener los campos de formulario, etiquetas y botones.
-            El componente panelGrid, como h:dataTable, se pueden personalizar ampliamente al uso de hojas de estilo en cascada (CSS).
-            El h:panelGrid no utiliza un modelo de datos subyacente para proporcionar filas de datos para fines de representación.
-            Más bien, este componente es un contenedor de diseño que hace otros componentes compatibles HTML4.
-            En JSF en una cuadrícula de filas y columnas compatibles con HTML4.
-            De forma predeterminada, a h:panelGrid tiene sólo una columna.*/
+                     cellpadding="3">
         <p:outputLabel id="lblPatente" for="txtPatente"
-                       value="Patente:"/>/*OutputLabel es una extensión de componente outputLabel estándar.
-        OutputLabel define su valor como etiqueta del componente de destino que se mostrará en los errores de validación
-        de manera que componente de destino no tiene que definir atributo label nuevo.
-        Soporte para componentes con marcas no trivial como hilandero, autocompletar, calendario, etc., que no son compatibles
-        con outputLabel estándar. Componente temático de error, asociado cuando "no es válido".
-        Requiere un indicador de campo.*/
-        <p:inputText id="txtPatente" required="true"
-                     maxlength="7" size="9"/>/*InputText extension de InputText estándar con capacidades skin (mostrar).*/
+                       value="Patente:"/>
+            <p:inputText id="txtPatente" required="true"
+                     maxlength="7" size="9"/>
         <p:outputLabel id="lblTipoVehiculo" for="cmbTipoVehiculos"
                        value="Tipo de Vehiculo:"/>
-        <p:selectOneMenu id="cmbTipoVehiculos" required="true"
-                         style="width: 125px;">/*SelectOneMenu se utiliza para elegir un único elemento de una lista.*/
-        <f:selectItem itemLabel="Seleccione un Tipo de Vehiculo"
-                      noSelectionOption="true"/>/*La etiqueta SelectItem añade un componente UISelectItem pequeño
-        para el componente asociado con la etiqueta envolvente. Esto crea un solo elemento en el RenderKit HTML.
-        Se puede utilizar con cualquiera de las etiquetas seleccione en la biblioteca de etiquetas JSF HTML.*/
-        <f:selectItem itemLabel="Automovil" itemValue="Automovil"/>
-        <f:selectItem itemLabel="Camioneta" itemValue="Camioneta"/>
-        <f:selectItem itemLabel="Moto" itemValue="Moto"/>
-        </p:selectOneMenu>
-        
+            <p:selectOneMenu id="cmbTipoVehiculos" required="true"
+                             style="width: 125px;">
+                <f:selectItem itemLabel="Seleccione un Tipo de Vehiculo"
+                              noSelectionOption="true"/>
+                <f:selectItem itemLabel="Automovil" itemValue="Automovil"/>
+                <f:selectItem itemLabel="Camioneta" itemValue="Camioneta"/>
+                <f:selectItem itemLabel="Moto" itemValue="Moto"/>
+            </p:selectOneMenu>
         <p:outputLabel id="lblHoraEntrada" for="txtHoraEntrada"
                        value="Hora de Entrada"/>
         <p:calendar id="txtHoraEntrada" disabled="true"
-                    pattern="HH:mm" timeOnly="true"/>/*p:calendar es un componente de entrada para ingresar una fecha y hora.*/
+                    pattern="HH:mm" timeOnly="true"/>
         <h:panelGroup/>
         <p:commandButton id="btnGrabarEntrada" value="Grabar" update="mensajes"/>
-        /*CommandButton extiende el estándar h:commandButton con ajax,
-        procesamiento parcial y características de skin.*/
         </h:panelGrid>
         </h:form>
         </p:panel>
     </h:body>
 </html>
-
-/*< pe:inputNumber >
-Formato de campos de entrada con cadenas numéricas.
-Es compatible con los símbolos de moneda, valor mínimo y máximo, los números negativos, y un muchos metodos de redondeo.
-
-Investigue como funciona y como lo aplicaría para poder ingresar números con formato de moneda en $ y con dos decimales.
-
-<!--<p:row>  
-        <p:column>  
-            <pe:inputNumber id="Input4" value="#{inputNumberController.input4}" decimalPlaces="2">  
-                <p:ajax event="blur" update="valueInput4" />  
-            </pe:inputNumber>  
-        </p:column>  
-  
-        <p:column>  
-            <p:inputText id="valueInput4" disabled="true" value="#{inputNumberController.input4}"/>  
-        </p:column>  
-  
-        <p:column>  
-            <h:outputText value="Custom decimal places."/>  
-        </p:column>  
-    </p:row>  -->
-*/
