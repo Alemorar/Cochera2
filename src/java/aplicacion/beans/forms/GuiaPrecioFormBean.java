@@ -10,6 +10,7 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import org.primefaces.context.RequestContext;
 
 /**
  *
@@ -24,6 +25,17 @@ public class GuiaPrecioFormBean implements Serializable{
      * Creates a new instance of GuiaPrecioFormBean
      */
     public GuiaPrecioFormBean() {
+    }
+    
+    public void mostrarConfirmacionNuevaGuia(){
+        RequestContext.getCurrentInstance().execute("PV('confirmaRegistrarGuia').show()");
+    }
+    
+    public void grabarGuia(){
+        System.out.println("Datos a Grabar");
+        System.out.println("Tipo de Vehiculo" + guiaPrecioBean.getGuiaPrecio().getTipoVehiculo());
+        System.out.println("Precio" + guiaPrecioBean.getGuiaPrecio().getPrecio());
+        RequestContext.getCurrentInstance().execute("PF('confirmaRegistrarGuia').hide()");
     }
 
     public GuiaPrecioBean getGuiaPrecioBean() {

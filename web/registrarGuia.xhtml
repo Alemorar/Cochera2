@@ -24,11 +24,17 @@
                     <p:message for="txtPrecio"/>
                     <h:panelGroup/>
                     <p:commandButton id="btnGrabarGuia" value="Grabar"
-                                     update="grdCrearGuiaPrecio">
-                        <p:confirm header="Confirmacion" message="¿Confirma agregar nueva guia de precio?"
-                                   icon="ui-icon-alert"/>
-                    </p:commandButton>
+                                     update="grdCrearGuiaPrecio"
+                                     actionListener="#{guiaPrecioFormBean.mostrarConfirmacionNuevaGuia()}"/>                    
                 </h:panelGrid>
+                <p:confirmDialog global="false" showEffect="fade" hideEffect="fade"
+                                 header="Confirmacion" message="¿Confirma agregar nueva Guia de Precio?"
+                                 widgetVar="confirmaRegistrarGuia">
+                    <p:commandButton value="si" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"
+                                 actionListener="#{guiaPrecioFormBean.grabarGuia()}"/>
+                    <p:commandButton value="no" styleClass="ui-confirmdialog-no" icon="ui-icon-close"
+                                 oncomplete="PF('confirmaRegistrarGuia').hide()"/>
+                </p:confirmDialog>
             </h:form>            
         </p:panel>
     </h:body>
