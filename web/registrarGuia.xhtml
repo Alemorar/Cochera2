@@ -13,16 +13,21 @@
                     <p:outputLabel id="lblTipoVehiculo" for="txtTipoVehiculo"
                                    value="Tipo de Vehiculo"/>
                     <p:inputText id="txtTipoVehiculo" required="true"
-                                 maxlength="15" size="17"/>
+                                 maxlength="15" size="17"
+                                 value="#{guiaPrecioFormBean.guiaPrecioBean.guiaPrecio.tipoVehiculo}"/>
                     <p:message for="txtTipoVehiculo"/>
                     <p:outputLabel id="lblPrecio" for="txtPrecio"
                                    value="Precio:"/>
                     <p:spinner id="txtPrecio" prefix="$" min="0" max="100"
-                               required="true"/>
+                               required="true"
+                               value="#{guiaPrecioFormBean.guiaPrecioBean.guiaPrecio.precio}"/>
                     <p:message for="txtPrecio"/>
                     <h:panelGroup/>
                     <p:commandButton id="btnGrabarGuia" value="Grabar"
-                                     update="grdCrearGuiaPrecio"/>
+                                     update="grdCrearGuiaPrecio">
+                        <p:confirm header="Confirmacion" message="¿Confirma agregar nueva guia de precio?"
+                                   icon="ui-icon-alert"/>
+                    </p:commandButton>
                 </h:panelGrid>
             </h:form>            
         </p:panel>
