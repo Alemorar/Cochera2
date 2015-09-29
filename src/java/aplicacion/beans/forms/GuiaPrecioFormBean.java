@@ -32,10 +32,7 @@ public class GuiaPrecioFormBean implements Serializable{
     }
     
     public void grabarGuia(){
-        System.out.println("Datos a Grabar");
-        System.out.println("Tipo de Vehiculo" + guiaPrecioBean.getGuiaPrecio().getTipoVehiculo());
-        System.out.println("Precio" + guiaPrecioBean.getGuiaPrecio().getPrecio());
-        RequestContext.getCurrentInstance().execute("PF('confirmaRegistrarGuia').hide()");
+        guiaPrecioBean.getPrecioDAO().crearGuiaPrecio(guiaPrecioBean.getGuiaPrecio());//
     }
 
     public GuiaPrecioBean getGuiaPrecioBean() {

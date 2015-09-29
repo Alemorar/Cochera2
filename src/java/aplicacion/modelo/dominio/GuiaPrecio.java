@@ -14,6 +14,7 @@ import java.io.Serializable;
  * @author nahuel
  */
 public class GuiaPrecio implements Serializable {
+    private int codigo;
     private String tipoVehiculo;
     private double precio;
 
@@ -24,6 +25,13 @@ public class GuiaPrecio implements Serializable {
         this.tipoVehiculo = tipoVehiculo;
         this.precio = precio;
         //codigo para registrar la guia en la base de datos
+    }
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
     
     public void modificarGuia(String tipoVehiculo, double precio){

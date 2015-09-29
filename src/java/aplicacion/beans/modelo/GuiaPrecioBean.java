@@ -5,10 +5,12 @@
  */
 package aplicacion.beans.modelo;
 
+import aplicacion.datos.hibernate.dao.IGuiaPrecioDAO;
 import aplicacion.modelo.dominio.GuiaPrecio;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ManagedProperty;
 
 /**
  *
@@ -17,7 +19,19 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 @RequestScoped
 public class GuiaPrecioBean implements Serializable{
+    @ManagedProperty(value = "#{guiaPrecio}")
     private GuiaPrecio guiaPrecio;
+    @ManagedProperty(value = "#{guiaPrecioDAO}")
+    private IGuiaPrecioDAO precioDAO;
+    
+
+    public IGuiaPrecioDAO getPrecioDAO() {
+        return precioDAO;
+    }
+
+    public void setPrecioDAO(IGuiaPrecioDAO precioDAO) {
+        this.precioDAO = precioDAO;
+    }
     /**
      * Creates a new instance of GuiaPrecioBean
      */
