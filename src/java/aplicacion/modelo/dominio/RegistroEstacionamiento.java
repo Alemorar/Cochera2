@@ -1,6 +1,7 @@
 package aplicacion.modelo.dominio;
 
 
+//import java.time.LocalTime;
 import java.time.LocalTime;
 import java.util.Date;
 
@@ -15,6 +16,7 @@ import java.util.Date;
  * @author nahuel
  */
 public class RegistroEstacionamiento {
+    private int condigo;
     private Date fecha;
     private String patente;
     private LocalTime hEntrada;
@@ -34,6 +36,14 @@ public class RegistroEstacionamiento {
 
     public Date getFecha() {
         return fecha;
+    }
+
+    public int getCondigo() {
+        return condigo;
+    }
+
+    public void setCondigo(int condigo) {
+        this.condigo = condigo;
     }
 
     public void setFecha(Date fecha) {

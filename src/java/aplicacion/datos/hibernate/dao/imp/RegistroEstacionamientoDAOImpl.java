@@ -5,8 +5,8 @@
  */
 package aplicacion.datos.hibernate.dao.imp;
 
-import aplicacion.datos.hibernate.dao.IGuiaPrecioDAO;
-import aplicacion.modelo.dominio.GuiaPrecio;
+import aplicacion.datos.hibernate.dao.IRegistroEstacionamientoDAO;
+import aplicacion.modelo.dominio.RegistroEstacionamiento;
 import java.io.Serializable;
 import javax.transaction.Transactional;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
@@ -15,10 +15,11 @@ import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
  *
  * @author nahuel
  */
-public class GuiaPrecioDAOImp extends HibernateDaoSupport implements IGuiaPrecioDAO, Serializable{
+public class RegistroEstacionamientoDAOImpl extends HibernateDaoSupport implements IRegistroEstacionamientoDAO, Serializable{
+
     @Override
     @Transactional
-    public void crearGuiaPrecio(GuiaPrecio guiaPrecio){
-        getHibernateTemplate().save(guiaPrecio);
+    public void guardarRegistro(RegistroEstacionamiento registroEstacionamiento) {
+        getHibernateTemplate().save(registroEstacionamiento);
     }
 }

@@ -35,6 +35,7 @@
         <property name="mappingResources">
             <list>
                 <value>aplicacion/datos/hibernate/mapeos/GuiaPrecio.hbm.xml</value>
+                <value>aplicacion/datos/hibernate/mapeos/RegistroEstacionamiento.hbm.xml</value>
             </list>
         </property>
     </bean>
@@ -50,13 +51,16 @@
     
     <!-- Inyeccion de Java Beans del dominio-->
     <bean id="guiaPrecio" class="aplicacion.modelo.dominio.GuiaPrecio"/>
-    
+    <bean id="registroEstacionamiento" class="aplicacion.modelo.dominio.RegistroEstacionamiento">
+        <property name="guiaPrecio" ref="guiaPrecio"/>
+    </bean>
     <!-- Inyeccion de DAO´s -->
-    
-    <bean id="guiaPrecioDAO" class="aplicacion.datos.hibernate.dao.imp.GuiaPrecioDAOImp">
+    <bean id="guiaPrecioDAO" class="aplicacion.datos.hibernate.dao.imp.GuiaPrecioDAOImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     
-
+    <bean id="registroEstacionamientoDAO" class="aplicacion.datos.hibernate.dao.imp.RegistroEstacionamientoDAOImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 </beans>
 

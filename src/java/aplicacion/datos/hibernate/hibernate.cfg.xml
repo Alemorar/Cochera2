@@ -8,5 +8,6 @@
     <property name="hibernate.connection.username">hr</property>
     <property name="hibernate.connection.password">hr</property>
     <mapping resource="aplicacion/datos/hibernate/mapeos/GuiaPrecio.hbm.xml"/>
+    <mapping resource="aplicacion/datos/hibernate/mapeos/RegistroEstacionamiento.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

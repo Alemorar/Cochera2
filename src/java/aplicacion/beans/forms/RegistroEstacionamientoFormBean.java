@@ -25,6 +25,10 @@ public class RegistroEstacionamientoFormBean implements Serializable{
      */
     public RegistroEstacionamientoFormBean() {
     }
+    
+    public void guardarEstacionamiento(){
+        registroEstacionamientoBean.getRegistroEstacionamientoDAO().guardarRegistro(registroEstacionamientoBean.getRegistroEstacionamiento());
+    }
 
     public RegistroEstacionamientoBean getRegistroEstacionamientoBean() {
         return registroEstacionamientoBean;

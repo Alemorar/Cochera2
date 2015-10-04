@@ -5,13 +5,13 @@
  */
 package aplicacion.datos.hibernate.dao;
 
-import aplicacion.modelo.dominio.GuiaPrecio;
+import aplicacion.modelo.dominio.RegistroEstacionamiento;
 
 /**
  *
  * @author nahuel
  */
-public interface IGuiaPrecioDAO {
+public interface IRegistroEstacionamientoDAO {
     
-    public void crearGuiaPrecio(GuiaPrecio guiaPrecio);
+    public void guardarRegistro(RegistroEstacionamiento registroEstacionamiento);
 }

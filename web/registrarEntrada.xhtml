@@ -19,14 +19,12 @@
                        value="Patente:"/>
             <p:inputText id="txtPatente" required="true"
                      maxlength="7" size="9"
-                     value="#{registroEstacionamientoFormBean.registroEstacionamientoBean.
-                        registroEstacionamiento.patente}"/>
+                     value="#{registroEstacionamientoFormBean.registroEstacionamientoBean.registroEstacionamiento.patente}"/>
         <p:outputLabel id="lblTipoVehiculo" for="cmbTipoVehiculos"
                        value="Tipo de Vehiculo:"/>
             <p:selectOneMenu id="cmbTipoVehiculos" required="true"
                              style="width: 125px;"
-                             value="#{registroEstacionamientoFormBean.registroEstacionamientoBean.
-                                        registroEstacionamiento.guiaPrecio.tipoVehiculo}">
+                             value="#{registroEstacionamientoFormBean.registroEstacionamientoBean.registroEstacionamiento.guiaPrecio.tipoVehiculo}">
                 <f:selectItem itemLabel="Seleccione un Tipo de Vehiculo"
                               noSelectionOption="true"/>
                 <f:selectItem itemLabel="Automovil" itemValue="Automovil"/>
@@ -35,12 +33,13 @@
             </p:selectOneMenu>
         <p:outputLabel id="lblHoraEntrada" for="txtHoraEntrada"
                        value="Hora de Entrada"/>
-        <p:calendar id="txtHoraEntrada" disabled="true"
+        <p:calendar id="txtHoraEntrada" disabled="false"
                     pattern="HH:mm" timeOnly="true"
                     value="#{registroEstacionamientoFormBean.registroEstacionamientoBean.
                                 registroEstacionamiento.hEntrada}"/>
         <h:panelGroup/>
-        <p:commandButton id="btnGrabarEntrada" value="Grabar" update="mensajes"/>
+        <p:commandButton id="btnGrabarEntrada" action="#{registroEstacionamientoFormBean.guardarEstacionamiento()}"
+                         value="Grabar" update="mensajes"/>
         </h:panelGrid>
         </h:form>
         </p:panel>

@@ -20,12 +20,20 @@ public class GuiaPrecio implements Serializable {
 
     public GuiaPrecio() {
     }
+
+    public GuiaPrecio(int codigo, String tipoVehiculo, double precio) {
+        this.codigo = codigo;
+        this.tipoVehiculo = tipoVehiculo;
+        this.precio = precio;
+        
+    }  
     
     public void crearNuevaGuia(String tipoVehiculo, double precio){
         this.tipoVehiculo = tipoVehiculo;
         this.precio = precio;
         //codigo para registrar la guia en la base de datos
     }
+    
     public int getCodigo() {
         return codigo;
     }

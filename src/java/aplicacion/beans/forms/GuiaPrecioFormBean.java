@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -28,7 +28,7 @@ public class GuiaPrecioFormBean implements Serializable{
     }
     
     public void mostrarConfirmacionNuevaGuia(){
-        RequestContext.getCurrentInstance().execute("PV('confirmaRegistrarGuia').show()");
+        RequestContext.getCurrentInstance().execute("PF('confirmaRegistrarGuia').show()");
     }
     
     public void grabarGuia(){
