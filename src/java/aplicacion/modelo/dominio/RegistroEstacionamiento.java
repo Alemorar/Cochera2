@@ -19,8 +19,8 @@ public class RegistroEstacionamiento {
     private int condigo;
     private Date fecha;
     private String patente;
-    private LocalTime hEntrada;
-    private LocalTime hSalida;
+    private Date hEntrada;
+    private Date hSalida;
     private double precioTotal;
     private GuiaPrecio GuiaPrecio;
 
@@ -34,16 +34,16 @@ public class RegistroEstacionamiento {
         return 0;
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
-
     public int getCondigo() {
         return condigo;
     }
 
     public void setCondigo(int condigo) {
         this.condigo = condigo;
+    }
+    
+    public Date getFecha() {
+        return fecha;
     }
 
     public void setFecha(Date fecha) {
@@ -58,19 +58,19 @@ public class RegistroEstacionamiento {
         this.patente = patente;
     }
 
-    public LocalTime gethEntrada() {
+    public Date gethEntrada() {
         return hEntrada;
     }
 
-    public void sethEntrada(LocalTime hEntrada) {
+    public void sethEntrada(Date hEntrada) {
         this.hEntrada = hEntrada;
     }
 
-    public LocalTime gethSalida() {
+    public Date gethSalida() {
         return hSalida;
     }
 
-    public void sethSalida(LocalTime hSalida) {
+    public void sethSalida(Date hSalida) {
         this.hSalida = hSalida;
     }
     public double getPrecioTotal() {

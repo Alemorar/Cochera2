@@ -7,6 +7,7 @@ package aplicacion.beans.forms;
 
 import aplicacion.beans.modelo.RegistroEstacionamientoBean;
 import java.io.Serializable;
+import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
@@ -24,6 +25,10 @@ public class RegistroEstacionamientoFormBean implements Serializable{
      * Creates a new instance of RegistroEstacionamientoFormBean
      */
     public RegistroEstacionamientoFormBean() {
+    }
+    
+    public void actualizarHoraEntrada(){
+        registroEstacionamientoBean.getRegistroEstacionamiento().sethEntrada(new Date(System.currentTimeMillis()));
     }
     
     public void guardarEstacionamiento(){

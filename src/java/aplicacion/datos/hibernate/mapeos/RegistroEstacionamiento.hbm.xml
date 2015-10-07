@@ -13,15 +13,15 @@
       <property name="fecha" type="date">
           <column name="FECHA"/>
       </property>
-      <property name="hEntrada" type="date">
-          <column name="HENTRADA"/>
-      </property>
-      <property name="hSalida" type="date">
-          <column name="HSALIDA"/>
-      </property>
       <property name="patente" type="string">
           <column name="PATENTE"/>
       </property>
+      <property name="hEntrada" type="date">
+          <column name="HENTRADA"/>
+      </property>
+<!--      <property name="hSalida" type="time">
+          <column name="HSALIDA"/>
+      </property>-->
       <property name="precioTotal" type="double">
           <column name="PRECIOTOTAL"/>
       </property>
