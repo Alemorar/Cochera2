@@ -6,6 +6,7 @@
 package aplicacion.datos.hibernate.dao;
 
 import aplicacion.modelo.dominio.RegistroEstacionamiento;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,4 +15,5 @@ import aplicacion.modelo.dominio.RegistroEstacionamiento;
 public interface IRegistroEstacionamientoDAO {
     
     public void guardarRegistro(RegistroEstacionamiento registroEstacionamiento);
+    public ArrayList<RegistroEstacionamiento> getRegistrosEntrada();
 }

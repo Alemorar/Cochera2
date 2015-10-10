@@ -25,5 +25,8 @@
       <property name="precioTotal" type="double">
           <column name="PRECIOTOTAL"/>
       </property>
+      <many-to-one name="guiaPrecio" class="aplicacion.modelo.dominio.GuiaPrecio" fetch="select">
+            <column name="CODIGOPRECIO" precision="22" scale="0" />
+      </many-to-one>
     </class>
 </hibernate-mapping>

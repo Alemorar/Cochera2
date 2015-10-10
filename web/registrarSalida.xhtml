@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+        <title>Registrar Salida de Vehiculo</title>
+    </h:head>
+    <h:body>
+        <p:panel id="pnlRegistrarEntrada" header="Registrar Entrada de Vehiculo">
+            
+            <p:dataTable value="#{registroEstacionamientoFormBean.registrosEntradas}"
+                         var="registroEstacionamiento">
+                <p:column headerText="Codigo">
+                    <h:outputText value="#{registroEstacionamiento.condigo}"/>                          
+                </p:column>
+                <p:column headerText="Patente">
+                    <h:outputText value="#{registroEstacionamiento.patente}"/>                          
+                </p:column>
+                
+            </p:dataTable>
+            
+            
+            <h:form id="frmRegistrarEntradaDeVehiculo">
+                <p:growl id="mensajes" sticky="true" showDetail="true"/>
+                <h:panelGrid id="grdRegistrarEntradaDeVehiculo" columns="2"
+                             cellpadding="3">
+                    <p:outputLabel id="lblFecha" for="txtFecha"
+                                   value="Fecha:"/>
+                    <p:inputText id="txtFecha" required="true"
+                                 maxlength="7" size="9"/>
+                    <p:outputLabel id="lblPatente" for="txtPatente"
+                                   value="Patente:"/>
+                    <p:inputText id="txtPatente" required="true"
+                                 maxlength="7" size="9"/>
+                    <p:outputLabel id="lblHoraEntrada" for="txtHoraEntrada"
+                                   value="Hora de Entrada"/>
+                    <p:inputText id="txtHoraEntrada" required="true"
+                                 maxlength="7" size="9"/>
+                    <p:outputLabel id="lblHoraSalida" for="txtHoraSalida"
+                                   value="Hora de Salida"/>
+                    <p:inputText id="txtHoraSalida" required="true"
+                                 maxlength="7" size="9"/>
+                    <p:outputLabel id="lblPrecio" for="txtPrecio"
+                                   value="Precio por Hora"/>
+                    <p:inputText id="txtPrecio" required="true"
+                                 maxlength="7" size="9"/>
+                    <p:outputLabel id="lblPrecioTotal" for="txtPrecioTotal"
+                                   value="Precio Total"/>
+                    <p:inputText id="txtPrecioTotal" required="true"
+                                 maxlength="7" size="9"/>
+                </h:panelGrid>
+            </h:form>
+        </p:panel>
+    </h:body>
+</html>

@@ -6,6 +6,7 @@
 package aplicacion.datos.hibernate.dao;
 
 import aplicacion.modelo.dominio.GuiaPrecio;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,4 +15,5 @@ import aplicacion.modelo.dominio.GuiaPrecio;
 public interface IGuiaPrecioDAO {
     
     public void crearGuiaPrecio(GuiaPrecio guiaPrecio);
+    public ArrayList<GuiaPrecio> getGuias();
 }

@@ -22,7 +22,7 @@ public class RegistroEstacionamiento {
     private Date hEntrada;
     private Date hSalida;
     private double precioTotal;
-    private GuiaPrecio GuiaPrecio;
+    private GuiaPrecio guiaPrecio;
 
     public RegistroEstacionamiento() {
     }
@@ -82,10 +82,10 @@ public class RegistroEstacionamiento {
     }
 
     public GuiaPrecio getGuiaPrecio() {
-        return GuiaPrecio;
+        return guiaPrecio;
     }
 
-    public void setGuiaPrecio(GuiaPrecio GuiaPrecio) {
-        this.GuiaPrecio = GuiaPrecio;
+    public void setGuiaPrecio(GuiaPrecio guiaPrecio) {
+        this.guiaPrecio = guiaPrecio;
     }
 }

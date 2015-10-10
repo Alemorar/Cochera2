@@ -6,7 +6,9 @@
 package aplicacion.beans.forms;
 
 import aplicacion.beans.modelo.GuiaPrecioBean;
+import aplicacion.modelo.dominio.GuiaPrecio;
 import java.io.Serializable;
+import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
@@ -33,6 +35,10 @@ public class GuiaPrecioFormBean implements Serializable{
     
     public void grabarGuia(){
         guiaPrecioBean.getPrecioDAO().crearGuiaPrecio(guiaPrecioBean.getGuiaPrecio());//
+    }
+    
+    public ArrayList<GuiaPrecio> getGuias(){
+        return guiaPrecioBean.getPrecioDAO().getGuias();
     }
 
     public GuiaPrecioBean getGuiaPrecioBean() {

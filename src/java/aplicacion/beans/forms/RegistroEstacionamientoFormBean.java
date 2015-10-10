@@ -6,11 +6,15 @@
 package aplicacion.beans.forms;
 
 import aplicacion.beans.modelo.RegistroEstacionamientoBean;
+import aplicacion.modelo.dominio.GuiaPrecio;
+import aplicacion.modelo.dominio.RegistroEstacionamiento;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import org.primefaces.context.RequestContext;
 
 /**
  *
@@ -26,6 +30,14 @@ public class RegistroEstacionamientoFormBean implements Serializable{
      */
     public RegistroEstacionamientoFormBean() {
     }
+    
+    public void mostrarConfirmacionRegistro(){
+        RequestContext.getCurrentInstance().execute("PF('confirmaRegistrarEntrada').show()");
+    }
+    
+    public ArrayList<RegistroEstacionamiento> getRegistrosEntradas(){
+        return registroEstacionamientoBean.getRegistroEstacionamientoDAO().getRegistrosEntrada();
+    } 
     
     public void actualizarHoraEntrada(){
         registroEstacionamientoBean.getRegistroEstacionamiento().sethEntrada(new Date(System.currentTimeMillis()));

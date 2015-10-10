@@ -8,7 +8,9 @@ package aplicacion.datos.hibernate.dao.imp;
 import aplicacion.datos.hibernate.dao.IRegistroEstacionamientoDAO;
 import aplicacion.modelo.dominio.RegistroEstacionamiento;
 import java.io.Serializable;
+import java.util.ArrayList;
 import javax.transaction.Transactional;
+import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 /**
@@ -21,5 +23,11 @@ public class RegistroEstacionamientoDAOImpl extends HibernateDaoSupport implemen
     @Transactional
     public void guardarRegistro(RegistroEstacionamiento registroEstacionamiento) {
         getHibernateTemplate().save(registroEstacionamiento);
+    }
+
+    @Override
+    public ArrayList<RegistroEstacionamiento> getRegistrosEntrada() {
+        DetachedCriteria criteria = DetachedCriteria.forClass(RegistroEstacionamiento.class);
+        return (ArrayList)getHibernateTemplate().findByCriteria(criteria);
     }
 }

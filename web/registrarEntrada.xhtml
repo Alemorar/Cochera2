@@ -4,8 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-
-
+    
     <h:head>
         <title>Registrar Entrada de Vehiculo</title>
     </h:head>
@@ -27,12 +26,14 @@
                                    value="Tipo de Vehiculo:"/>
                     <p:selectOneMenu id="cmbTipoVehiculos" required="true"
                                      style="width: 125px;"
-                                     value="#{registroEstacionamientoFormBean.registroEstacionamientoBean.registroEstacionamiento.guiaPrecio.tipoVehiculo}">
-                        <f:selectItem itemLabel="Seleccione un Tipo de Vehiculo"
+                                     value="#{registroEstacionamientoFormBean.registroEstacionamientoBean.registroEstacionamiento.guiaPrecio.codigo}">
+                        
+                        <f:selectItems value="#{guiaPrecioFormBean.guias}" var="guia" itemLabel="#{guia.tipoVehiculo}" itemValue="#{guia.codigo}"/>
+<!--                        <f:selectItem itemLabel="Seleccione un Tipo de Vehiculo"
                                       noSelectionOption="true"/>
-                        <f:selectItem itemLabel="Automovil" itemValue="Automovil"/>
+                        <f:selectItem itemLabel="Automovil" selseValue="Automovil"/>
                         <f:selectItem itemLabel="Camioneta" itemValue="Camioneta"/>
-                        <f:selectItem itemLabel="Moto" itemValue="Moto"/>
+                        <f:selectItem itemLabel="Moto" itemValue="Moto"/>-->
                         <p:ajax event="change" listener="#{registroEstacionamientoFormBean.actualizarHoraEntrada()}" 
                                 update="grdRegistrarEntradaDeVehiculo" />
                     </p:selectOneMenu>
@@ -43,9 +44,18 @@
                                 value="#{registroEstacionamientoFormBean.registroEstacionamientoBean.
                                          registroEstacionamiento.hEntrada}"/>
                     <h:panelGroup/>
-                    <p:commandButton id="btnGrabarEntrada" action="#{registroEstacionamientoFormBean.guardarEstacionamiento()}"
-                                     value="Grabar" update="mensajes"/>
+                    <p:commandButton id="btnGrabarEntrada" value="Grabar" update="grdRegistrarEntradaDeVehiculo"
+                                     actionListener="#{registroEstacionamientoFormBean.mostrarConfirmacionRegistro()}"/>  
                 </h:panelGrid>
+                <p:confirmDialog global="false" showEffect="fade" hideEffect="fade"
+                                 header="Confirmacion" message="¿Confirma agregar nueva Guia de Precio?"
+                                 widgetVar="confirmaRegistrarEntrada">
+                    <p:commandButton value="si" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"
+                                 actionListener="#{registroEstacionamientoFormBean.guardarEstacionamiento()}"
+                                 oncomplete="PF('confirmaRegistrarEntrada').hide()"/>
+                    <p:commandButton value="no" styleClass="ui-confirmdialog-no" icon="ui-icon-close"
+                                 oncomplete="PF('confirmaRegistrarEntrada').hide()"/>
+                </p:confirmDialog>
             </h:form>
         </p:panel>
     </h:body>
