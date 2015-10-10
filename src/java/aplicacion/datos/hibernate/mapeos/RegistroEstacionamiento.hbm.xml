@@ -19,9 +19,9 @@
       <property name="hEntrada" type="date">
           <column name="HENTRADA"/>
       </property>
-<!--      <property name="hSalida" type="time">
+      <property name="hSalida" type="time">
           <column name="HSALIDA"/>
-      </property>-->
+      </property>
       <property name="precioTotal" type="double">
           <column name="PRECIOTOTAL"/>
       </property>

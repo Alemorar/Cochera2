@@ -9,17 +9,31 @@
         <title>Registrar Salida de Vehiculo</title>
     </h:head>
     <h:body>
-        <p:panel id="pnlRegistrarEntrada" header="Registrar Entrada de Vehiculo">
+        <p:panel id="pnlRegistrarEntrada" header="Gestion Salida de Vehiculo">
             
             <p:dataTable value="#{registroEstacionamientoFormBean.registrosEntradas}"
                          var="registroEstacionamiento">
                 <p:column headerText="Codigo">
                     <h:outputText value="#{registroEstacionamiento.condigo}"/>                          
                 </p:column>
+                <p:column headerText="Fecha">
+                    <h:outputText value="#{registroEstacionamiento.fecha}"/>                          
+                </p:column>
                 <p:column headerText="Patente">
                     <h:outputText value="#{registroEstacionamiento.patente}"/>                          
                 </p:column>
-                
+                <p:column headerText="Hora Entrada">
+                    <h:outputText value="#{registroEstacionamiento.patente}"/>                          
+                </p:column>
+                <p:column headerText="Hora Salida">
+                    <h:outputText value="#{registroEstacionamiento.patente}"/>                          
+                </p:column>
+                <p:column headerText="Precio por Hora">
+                    <h:outputText value="#{registroEstacionamiento.guiaPrecio}"/>                          
+                </p:column>
+                <p:column headerText="Precio Total">
+                    <h:outputText value="#{registroEstacionamiento.precioTotal}"/>                          
+                </p:column>
             </p:dataTable>
             
             
