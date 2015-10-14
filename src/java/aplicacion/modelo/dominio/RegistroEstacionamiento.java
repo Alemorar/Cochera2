@@ -16,7 +16,7 @@ import java.util.Date;
  * @author nahuel
  */
 public class RegistroEstacionamiento {
-    private int condigo;
+    private int codigo;
     private Date fecha;
     private String patente;
     private Date hEntrada;
@@ -34,12 +34,12 @@ public class RegistroEstacionamiento {
         return 0;
     }
 
-    public int getCondigo() {
-        return condigo;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public void setCondigo(int condigo) {
-        this.condigo = condigo;
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
     
     public Date getFecha() {

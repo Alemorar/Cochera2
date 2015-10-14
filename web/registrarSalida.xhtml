@@ -10,63 +10,50 @@
     </h:head>
     <h:body>
         <p:panel id="pnlRegistrarEntrada" header="Gestion Salida de Vehiculo">
-            
-            <p:dataTable value="#{registroEstacionamientoFormBean.registrosEntradas}"
-                         var="registroEstacionamiento">
-                <p:column headerText="Codigo">
-                    <h:outputText value="#{registroEstacionamiento.condigo}"/>                          
-                </p:column>
-                <p:column headerText="Fecha">
-                    <h:outputText value="#{registroEstacionamiento.fecha}"/>                          
-                </p:column>
-                <p:column headerText="Patente">
-                    <h:outputText value="#{registroEstacionamiento.patente}"/>                          
-                </p:column>
-                <p:column headerText="Hora Entrada">
-                    <h:outputText value="#{registroEstacionamiento.patente}"/>                          
-                </p:column>
-                <p:column headerText="Hora Salida">
-                    <h:outputText value="#{registroEstacionamiento.patente}"/>                          
-                </p:column>
-                <p:column headerText="Precio por Hora">
-                    <h:outputText value="#{registroEstacionamiento.guiaPrecio}"/>                          
-                </p:column>
-                <p:column headerText="Precio Total">
-                    <h:outputText value="#{registroEstacionamiento.precioTotal}"/>                          
-                </p:column>
-            </p:dataTable>
-            
-            
-            <h:form id="frmRegistrarEntradaDeVehiculo">
-                <p:growl id="mensajes" sticky="true" showDetail="true"/>
-                <h:panelGrid id="grdRegistrarEntradaDeVehiculo" columns="2"
-                             cellpadding="3">
-                    <p:outputLabel id="lblFecha" for="txtFecha"
-                                   value="Fecha:"/>
-                    <p:inputText id="txtFecha" required="true"
-                                 maxlength="7" size="9"/>
-                    <p:outputLabel id="lblPatente" for="txtPatente"
-                                   value="Patente:"/>
-                    <p:inputText id="txtPatente" required="true"
-                                 maxlength="7" size="9"/>
-                    <p:outputLabel id="lblHoraEntrada" for="txtHoraEntrada"
-                                   value="Hora de Entrada"/>
-                    <p:inputText id="txtHoraEntrada" required="true"
-                                 maxlength="7" size="9"/>
-                    <p:outputLabel id="lblHoraSalida" for="txtHoraSalida"
-                                   value="Hora de Salida"/>
-                    <p:inputText id="txtHoraSalida" required="true"
-                                 maxlength="7" size="9"/>
-                    <p:outputLabel id="lblPrecio" for="txtPrecio"
-                                   value="Precio por Hora"/>
-                    <p:inputText id="txtPrecio" required="true"
-                                 maxlength="7" size="9"/>
-                    <p:outputLabel id="lblPrecioTotal" for="txtPrecioTotal"
-                                   value="Precio Total"/>
-                    <p:inputText id="txtPrecioTotal" required="true"
-                                 maxlength="7" size="9"/>
-                </h:panelGrid>
-            </h:form>
+            <h.form id="form">
+                <p:dataTable value="#{registroEstacionamientoFormBean.registrosEntradas}"
+                         var="regEntrada">
+                    <p:column headerText="Codigo">
+                        <h:outputText value="#{regEntrada.codigo}"/>                          
+                    </p:column>
+                    <p:column headerText="Fecha">
+                        <p:calendar id="Fecha" disabled="true" pattern="dd/MM/yyyy" value="#{regEntrada.fecha}"
+                                    styleClass="tds-input-text-or-calendar"/>
+                    </p:column>
+                    <p:column headerText="Patente">
+                        <h:outputText value="#{regEntrada.patente}" style="text-transform: uppercase"/>                          
+                    </p:column>
+                    <p:column headerText="Tipo de Vehiculo">
+                        <h:outputText value="#{regEntrada.guiaPrecio.tipoVehiculo}"/>                          
+                    </p:column>
+                    <p:column headerText="Hora Entrada">
+                        <p:calendar id="hEntrada" disabled="true" pattern="HH:mm" timeOnly="true" value="#{regEntrada.hEntrada}"/>
+                    </p:column>
+                    <p:column headerText="Hora Salida">
+                        <p:calendar id="hSalida" disabled="true" pattern="HH:mm" timeOnly="true" value="#{regEntrada.hSalida}"/>
+                    </p:column>
+                    <p:column headerText="Precio por Hora">
+                        <h:outputText value="#{regEntrada.guiaPrecio.precio}"/>                          
+                    </p:column>
+                    <p:column headerText="Precio Total">
+                        <h:outputText value="#{regEntrada.precioTotal}"/>                          
+                    </p:column>
+                    
+                    <p:column headerText="Finalizar">
+                        <p:commandButton value="Cerrar">
+                            <p:confirm header="Confirmation" message="Are you sure?" icon="ui-icon-alert" />
+                        </p:commandButton>
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                            <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" 
+                                             icon="ui-icon-close" 
+                                             actionListener="#{registroEstacionamientoFormBean.registroEstacionamientoBean.registroEstacionamiento.sethSalida(hSalida)}"/>
+                            <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" 
+                                             icon="ui-icon-close" />
+                        </p:confirmDialog>
+                        
+                    </p:column>
+                </p:dataTable>
+            </h.form>            
         </p:panel>
     </h:body>
 </html>

@@ -36,6 +36,7 @@ public class RegistroEstacionamientoFormBean implements Serializable{
     }
     
     public ArrayList<RegistroEstacionamiento> getRegistrosEntradas(){
+        System.out.println("Cant reg: "+registroEstacionamientoBean.getRegistroEstacionamientoDAO().getRegistrosEntrada().size());
         return registroEstacionamientoBean.getRegistroEstacionamientoDAO().getRegistrosEntrada();
     } 
     
@@ -44,6 +45,7 @@ public class RegistroEstacionamientoFormBean implements Serializable{
     }
     
     public void guardarEstacionamiento(){
+        registroEstacionamientoBean.getRegistroEstacionamiento().setFecha(new Date());
         registroEstacionamientoBean.getRegistroEstacionamientoDAO().guardarRegistro(registroEstacionamientoBean.getRegistroEstacionamiento());
     }
 

@@ -16,8 +16,8 @@
                              cellpadding="3">
                     <p:outputLabel id="lblPatente" for="txtPatente"
                                    value="Patente:"/>
-                    <p:inputText id="txtPatente" required="true"
-                                 maxlength="7" size="9"
+                    <p:inputText id="txtPatente" required="true" style="text-transform: uppercase"
+                                 maxlength="6" size="6"
                                  value="#{registroEstacionamientoFormBean.registroEstacionamientoBean.registroEstacionamiento.patente}">
                         <p:ajax event="change" listener="#{registroEstacionamientoFormBean.actualizarHoraEntrada()}" 
                                 update="grdRegistrarEntradaDeVehiculo" />
@@ -48,7 +48,7 @@
                                      actionListener="#{registroEstacionamientoFormBean.mostrarConfirmacionRegistro()}"/>  
                 </h:panelGrid>
                 <p:confirmDialog global="false" showEffect="fade" hideEffect="fade"
-                                 header="Confirmacion" message="¿Confirma agregar nueva Guia de Precio?"
+                                 header="Confirmacion" message="¿Confirma registrar nueva Entrada?"
                                  widgetVar="confirmaRegistrarEntrada">
                     <p:commandButton value="si" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"
                                  actionListener="#{registroEstacionamientoFormBean.guardarEstacionamiento()}"
