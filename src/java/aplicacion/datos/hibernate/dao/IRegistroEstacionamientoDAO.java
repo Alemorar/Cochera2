@@ -16,4 +16,6 @@ public interface IRegistroEstacionamientoDAO {
     
     public void guardarRegistro(RegistroEstacionamiento registroEstacionamiento);
     public ArrayList<RegistroEstacionamiento> getRegistrosEntrada();
+    public void actualizarRegistro(RegistroEstacionamiento registroEstacionamiento);
+    
 }

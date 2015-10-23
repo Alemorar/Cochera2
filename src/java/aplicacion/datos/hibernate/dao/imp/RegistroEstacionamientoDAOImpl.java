@@ -24,6 +24,13 @@ public class RegistroEstacionamientoDAOImpl extends HibernateDaoSupport implemen
     public void guardarRegistro(RegistroEstacionamiento registroEstacionamiento) {
         getHibernateTemplate().save(registroEstacionamiento);
     }
+    
+    @Override
+    @Transactional
+    public void actualizarRegistro(RegistroEstacionamiento registroEstacionamiento){
+        getHibernateTemplate().update(registroEstacionamiento);
+        System.out.println("Actualiza registro de estacionamiento");
+    }
 
     @Override
     public ArrayList<RegistroEstacionamiento> getRegistrosEntrada() {
